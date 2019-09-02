@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <MainNavBar />
-      <ListFacts />
+      <ListFacts limit={2} />
     </div>
   );
 }

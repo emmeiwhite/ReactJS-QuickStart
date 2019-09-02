@@ -1,11 +1,12 @@
 import React from "react";
-import { Table } from "reactstrap";
+import { Table, Container } from "reactstrap";
 import { facts } from "./../data/AnimalFacts";
+import PropTypes from "prop-types";
 
-export default class ListFacts extends React.Component {
+class ListFacts extends React.Component {
   render() {
     return (
-      <main>
+      <Container>
         <h1>ANIMAL DETAILS</h1>
         <Table striped>
           <thead>
@@ -17,7 +18,7 @@ export default class ListFacts extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {facts.map(animal => {
+            {facts.slice(0, this.props.limit).map(animal => {
               return (
                 <tr key={animal.id}>
                   <td>{animal.name}</td>
@@ -35,7 +36,14 @@ export default class ListFacts extends React.Component {
             })}
           </tbody>
         </Table>
-      </main>
+      </Container>
     );
   }
 }
+// This ListFacts component is receving a prop named 'limit', which is expected to contain a numeric value, prop-types library allows us to set the propTypes for other developers to quickly get an idea what the type of the prop is and in this way help him to understand the code fast
+
+ListFacts.propTypes = {
+  limit: PropTypes.number
+};
+
+export default ListFacts;
