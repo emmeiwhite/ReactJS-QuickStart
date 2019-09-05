@@ -1,13 +1,13 @@
-import { facts } from "./../data/AnimalFacts";
+// import { facts } from "./../data/AnimalFacts";
+// We are planning to use axios api now. We gonna host our jsonlist on myjson.com
+
+import axios from "axios";
 
 class HttpService {
   get(url) {
-    const promiseAction = resolve => {
-      setTimeout(() => {
-        resolve(facts); // Promise is resolved! after 2s of delay
-      }, 2000);
-    };
-    return new Promise(promiseAction);
+    return axios.get(url).then(response => {
+      return response.data;
+    });
   }
 }
 

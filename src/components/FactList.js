@@ -8,26 +8,18 @@ const FactList = ({ limit, facts }) => {
       <Table striped>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Species</th>
-            <th>BirthYear</th>
-            <th>Image</th>
+            <th>Fact</th>
+            <th>Created At</th>
+            <th>Updated At</th>
           </tr>
         </thead>
         <tbody>
-          {facts.slice(0, limit).map(animal => {
+          {facts.slice(0, limit).map(animal_Cat => {
             return (
-              <tr key={animal.id}>
-                <td>{animal.name}</td>
-                <td>{animal.species}</td>
-                <td>{animal.birthYear}</td>
-                <td>
-                  <img
-                    src={animal.photo}
-                    alt={animal.name}
-                    style={{ width: "100px", height: "auto" }}
-                  />
-                </td>
+              <tr key={animal_Cat._id}>
+                <td>{animal_Cat.text}</td>
+                <td>{animal_Cat.createdAt}</td>
+                <td>{animal_Cat.updatedAt}</td>
               </tr>
             );
           })}

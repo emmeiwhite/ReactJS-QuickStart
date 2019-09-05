@@ -15,8 +15,10 @@ class FactListPage extends React.Component {
   };
 
   componentDidMount() {
+    // I changed my AnimalFacts api with cats only, and copy pasted the Json data in myjson.com, to get the below url for my json.
+    const url = "https://api.myjson.com/bins/v1y3j";
     httpService
-      .get()
+      .get(url)
       .then(data => {
         this.setState({
           facts: data,
