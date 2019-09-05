@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -31,12 +32,17 @@ export default class MainNavBar extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">React Quick Start</NavbarBrand>
+          <NavbarBrand tag={Link} to="/">
+            React Quick Start
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/Help/">Help</NavLink>
+                {/* Note how reactstrap developers have made sure, we use the tag property within NavLink  */}
+                <NavLink tag={Link} to="/Help/">
+                  Help
+                </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>

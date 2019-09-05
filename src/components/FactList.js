@@ -1,6 +1,7 @@
 import React from "react";
 import { Table, Container } from "reactstrap";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const FactList = ({ limit, facts }) => {
   return (
@@ -22,7 +23,7 @@ const FactList = ({ limit, facts }) => {
                 <td>{animal_Cat.createdAt}</td>
                 <td>{animal_Cat.updatedAt}</td>
                 <td className="text-center">
-                  <a href={`/EditFact/${animal_Cat.id}`}>Edit</a>
+                  <Link to={`/EditFact/${animal_Cat._id}`}>Edit</Link>
                 </td>
               </tr>
             );
