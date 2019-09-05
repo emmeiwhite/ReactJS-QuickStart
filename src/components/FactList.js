@@ -11,6 +11,7 @@ const FactList = ({ limit, facts }) => {
             <th>Fact</th>
             <th>Created At</th>
             <th>Updated At</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -20,6 +21,9 @@ const FactList = ({ limit, facts }) => {
                 <td>{animal_Cat.text}</td>
                 <td>{animal_Cat.createdAt}</td>
                 <td>{animal_Cat.updatedAt}</td>
+                <td className="text-center">
+                  <a href={`/EditFact/${animal_Cat.id}`}>Edit</a>
+                </td>
               </tr>
             );
           })}
